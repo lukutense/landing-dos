@@ -83,7 +83,7 @@ if(selectedTheme){
 themeButton.addEventListener('click', ()=>{
     //add or remove the dark/icon theme
     const body= document.querySelector('body')
-    
+
     if(!body.classList.contains(darkTheme)){
         document.body.classList.add(darkTheme)
         themeButton.classList.add(iconTheme)
@@ -97,3 +97,16 @@ themeButton.addEventListener('click', ()=>{
 
 })
 /*=============== SCROLL REVEAL ANIMATION ===============*/
+const sr= ScrollReveal({
+    origin:'top',
+    distance: '60px',
+    duration:2500,
+    delay:400,
+    //reset: true
+})
+
+sr.reveal(`.home__data, .products__container, .footer__container, .footer__info`)
+sr.reveal(`.home__images`,{delay: 600, origin: 'bottom'})
+sr.reveal(`.new__card, .brand__img`,{interval:100})
+sr.reveal(`.collection__explore:nth-child(1)`,{origin: 'right'})
+sr.reveal(`.collection__explore:nth-child(2)`,{origin: 'left'})
